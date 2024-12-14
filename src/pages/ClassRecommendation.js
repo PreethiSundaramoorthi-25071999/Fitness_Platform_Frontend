@@ -17,7 +17,7 @@ const ClassRecommendation = ({ userId }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5001/api/preference/recommendations",
+        "https://fitness-platform-backend.onrender.com/api/preference/recommendations",
         { preference, userId }
       );
       setRecommendations(response.data.recommendations);

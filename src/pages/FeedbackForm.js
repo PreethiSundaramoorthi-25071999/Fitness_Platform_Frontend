@@ -16,7 +16,7 @@ const FeedbackForm = ({ trainerId }) => {
   const fetchFeedbacks = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:5001/api/feedback/${trainerId}`);
+      const response = await axios.get(`https://fitness-platform-backend.onrender.com/api/feedback/${trainerId}`);
       setFeedbacks(response.data.feedbacks || []);
       setLoading(false);
     } catch (err) {
@@ -38,7 +38,7 @@ const FeedbackForm = ({ trainerId }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5001/api/feedback", {
+      await axios.post("https://fitness-platform-backend.onrender.com/api/feedback", {
         trainerId,
         rating: parseInt(rating, 10),
         comment,

@@ -11,7 +11,7 @@ const ScheduleList = () => {
 
   const fetchSchedules = async () => {
     try {
-      const response = await axios.get("http://localhost:5001/api/schedule");
+      const response = await axios.get("https://fitness-platform-backend.onrender.com/api/schedule");
       setSchedules(response.data.schedules || []);
     } catch (err) {
       console.error("Error fetching schedules:", err);
@@ -26,7 +26,7 @@ const ScheduleList = () => {
   // Handle schedule deletion
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5001/api/schedule/${id}`);
+      await axios.delete(`https://fitness-platform-backend.onrender.com/api/schedule/${id}`);
       fetchSchedules();
       alert("Schedule deleted successfully!");
     } catch (err) {
@@ -37,7 +37,7 @@ const ScheduleList = () => {
 
   const handleUpdate = async (updatedData) => {
     try {
-       await axios.put(`http://localhost:5001/api/schedule/${selectedSchedule._id}`, updatedData);
+       await axios.put(`https://fitness-platform-backend.onrender.com/api/schedule/${selectedSchedule._id}`, updatedData);
       fetchSchedules();
       alert("Schedule updated successfully!");
       setIsModalOpen(false);

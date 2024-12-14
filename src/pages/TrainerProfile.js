@@ -12,7 +12,7 @@ const TrainerList = () => {
   useEffect(() => {
     const fetchTrainers = async () => {
       try {
-        const response = await axios.get("http://localhost:5001/api/trainers");
+        const response = await axios.get("https://fitness-platform-backend.onrender.com/api/trainers");
         setTrainers(response.data);
       } catch (error) {
         console.error("Error fetching trainers:", error);

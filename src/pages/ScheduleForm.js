@@ -18,7 +18,7 @@ const ScheduleForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5001/api/schedule/create', formData);
+      const response = await axios.post('https://fitness-platform-backend.onrender.com/api/schedule/create', formData);
       alert('Schedule Created Successfully! Check "My Bookings" page to view the schedules');
       console.log(response.data);
     } catch (err) {
